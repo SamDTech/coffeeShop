@@ -37,10 +37,10 @@ export class CoffeesController {
     @Param('id') id: string,
     @Body() updateCoffeeDto: UpdateCoffeesDto,
   ) {
-    return `this endpoint update the id ${id}`;
+    return this.coffeesService.update(id, updateCoffeeDto);
   }
   @Delete(':id')
   remove(@Param('id') id) {
-    return `endpoint to delete coffee with id ${id}`;
+    return this.coffeesService.remove(id);
   }
 }
